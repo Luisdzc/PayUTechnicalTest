@@ -1,0 +1,21 @@
+# Eclipse
+.classpath
+.project
+.settings/
+ 
+# Intellij
+.idea/
+*.iml
+*.iws
+*.ipr 
+# Mac
+.DS_Store
+ 
+# Maven
+log/
+target/
+
+# Misc
+bmp.log
+tfl.properties
+taxi-rank.iml
