@@ -74,6 +74,7 @@ public class RegisterUserController extends ScenarioSteps {
     public void signInPageShouldBeDisplayed() {
         Assert.assertThat("The sign in page is not displayed: ",
                 signInPage.isDisplayed(),Matchers.equalTo(true));
+        basePage.getDriver().close();
     }
 
     @Step

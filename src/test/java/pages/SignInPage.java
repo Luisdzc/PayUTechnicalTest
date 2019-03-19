@@ -1,5 +1,6 @@
 package pages;
 
+import model.User;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,6 +21,13 @@ public class SignInPage extends BasePage {
     private WebElement createAnAccountPanel;
     @FindBy(xpath = "//div[@class='alert alert-danger']")
     private WebElement alertPopUp;
+    @FindBy(id = "email")
+    private WebElement emailForLoggin;
+    @FindBy(id = "passwd")
+    private WebElement passwordForLoggin;
+    @FindBy(id = "SubmitLogin")
+    private WebElement logginButton;
+
 
     public SignInPage(WebDriver webDriver) {
         super(webDriver);
@@ -44,5 +52,11 @@ public class SignInPage extends BasePage {
 
     public String getAlertMessage() {
         return alertPopUp.getText();
+    }
+
+    public void logUser(User user) {
+        webDriverWait.until(ExpectedConditions.visibilityOf(emailForLoggin)).sendKeys(user.getEmail());
+        passwordForLoggin.sendKeys(user.getPassword());
+        logginButton.click();
     }
 }
