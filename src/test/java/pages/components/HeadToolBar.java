@@ -12,6 +12,9 @@ public class HeadToolBar extends BasePage {
     private WebElement signInButton;
     @FindBy(xpath = "//a[@class='account']")
     private WebElement accountButton;
+    @FindBy(xpath = "//a[@title='View my shopping cart']")
+    public WebElement shoppingCartButton;
+
 
 
     public HeadToolBar(WebDriver webDriver) {

@@ -70,11 +70,13 @@ public class RegisterUserController extends ScenarioSteps {
                 signInPage.warningMessage.getText(),Matchers.containsString(warningMessage));
     }
 
+    @Step
     public void signInPageShouldBeDisplayed() {
         Assert.assertThat("The sign in page is not displayed: ",
                 signInPage.isDisplayed(),Matchers.equalTo(true));
     }
 
+    @Step
     public void registerAlertShouldBeDisplayed(String missingField) {
         Assert.assertThat("The missing data alert was not displayed: ",
                 signInPage.alertIsDisplayed(),Matchers.equalTo(true));
